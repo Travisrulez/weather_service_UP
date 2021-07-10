@@ -5,6 +5,8 @@
 
 
     <div class="main-w3layouts wrapper">
+        <h1>Добрый день {% if user.is_authenticated and user.is_staff and user.is_superuser %} Admin {% elif user.is_authenticated and user.is_staff %} Operator {% else %} User {% endif %} {{ user.username }} </h1>
+        <!-- <h1>{{user.user_permissions}}</h1> -->
         <h1>Город, для которого вы хотите узнать погоду. </h1>
         <div class="main-agileinfo">
             <div class="agileits-top">
@@ -18,7 +20,8 @@
                         <div class="clear"></div>
                     </div>
                     <input type="submit" value="Узнать погоду">
-                    <a href="{% url 'weather:logout' %}">Выход</a>
+                    <a href="{% url 'weather:logout' %}">|Выход из аккаунта|</a> 
+                    <a href="/weather/landing">|Главная|</a>
                 </form>
 
             </div>

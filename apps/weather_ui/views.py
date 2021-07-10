@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model, authenticate, logout, login
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from rest_framework import permissions
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
@@ -82,3 +82,6 @@ class Weather(IsUser, APIView):
         response = GetWeatherData(city)
 
         return Response(response)
+
+def landing(request):
+    return render(request, 'index.html')

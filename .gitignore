@@ -2,6 +2,7 @@
 документалка
 venv
 .vscode
+.idea
 
 ### OSX ###
 .DS_Store
